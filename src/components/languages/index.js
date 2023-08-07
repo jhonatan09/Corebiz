@@ -8,7 +8,7 @@ const Languages = [
         Footer_email: "Entre em contato",
         Chat: "Fale com o nosso consultor online",
         location: "Localização",
-        title: "Produtos"
+        title: "Mais vendidos"
     },
     {
         id: 2,
@@ -19,7 +19,7 @@ const Languages = [
         Footer_email: "Get in touch",
         Chat: "Talk to our online consultant",
         location: "Location",
-        title: "Products"
+        title: "Best sellers"
     },
     {
         id: 3,
@@ -30,7 +30,7 @@ const Languages = [
         Footer_email: "Entre en contacto",
         Chat: "Hable con nuestro consultor en línea",
         location: "Ubicación",
-        title: "Productos"
+        title: "Más vendidos"
     },
 ]
 

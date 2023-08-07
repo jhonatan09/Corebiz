@@ -13,7 +13,7 @@
             border: 2px solid #C0C0C0;
             margin-left: 1px;
             margin-bottom: 2%;
-            margin-top: -20px;
+            margin-top: 1px;
         }
     }
 
@@ -252,7 +252,7 @@
 
             &:before {
                 content: '';
-                background: url('../componentes/imagens/Icon.png');
+                background: url('../assets/Icon.png');
                 background-repeat: no-repeat;
                 display: block;
                 height: 25px;
@@ -280,7 +280,7 @@
 
             &:before {
                 content: '';
-                background: url('../componentes/imagens/IconPrev.png');
+                background: url('../assets/IconPrev.png');
                 background-repeat: no-repeat;
                 display: block;
                 height: 25px;

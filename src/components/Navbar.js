@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { NavLink } from "react-router-dom";
-import Languages from './languages/Languages'
+import Languages from './languages'
 import { DataContext } from '../store'
 
 const Navbar = (props) => {

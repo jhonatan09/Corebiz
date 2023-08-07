@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Navbar from './componentes/Navbar'
+import Navbar from './components/Navbar'
 import { BrowserRouter } from 'react-router-dom';
-import Main from "./componentes/Main"
-import Footer from './componentes/Footer'
+import Main from "./page/Home"
+import Footer from './components/Footer'
 import { DataContextProvider } from './store'
 
 const App = () => {
@@ -16,9 +16,9 @@ const App = () => {
   return (
     <div className="App">
       <DataContextProvider>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <BrowserRouter>
           <Navbar language={languages} active_language={language} />
-          <Main />
+          <Main active_language={language} />
           <Footer active_language={language} />
 
         </BrowserRouter>

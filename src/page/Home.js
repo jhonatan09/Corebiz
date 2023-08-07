@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import BannersJson from './Banners_json';
+import BannersJson from '../components/Banners_data';
 import Slider from "react-slick";
 import { bool } from 'prop-types';
-import Products from './Product'
-
+import Products from '../components/Product'
+import Languages from '../components/languages'
 
 
 
@@ -18,6 +18,13 @@ const Principal = (props) => {
     })
 
 
+    var title = Languages.map(titles => {
+        return (
+            titles.ID_LINGUA === props.active_language ?
+                <h1 key={titles.id} className="title">{titles.title}</h1>
+                : ''
+        )
+    })
 
 
     const settings = {
@@ -39,9 +46,7 @@ const Principal = (props) => {
                 </div>
             </div>
             <div className="list-products container">
-                <div className='title'>
-                    <h3>Mais Vendidos</h3>
-                </div>
+                {title}
                 <Products />
             </div>
         </div>

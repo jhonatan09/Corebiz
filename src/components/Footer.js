@@ -1,5 +1,5 @@
 import React from 'react'
-import Languages from './languages/Languages'
+import Languages from './languages'
 
 class Footer extends React.Component {
     render() {
