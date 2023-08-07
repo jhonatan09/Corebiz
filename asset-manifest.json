@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Corebiz/static/css/main.8b8d107a.css",
+    "main.js": "/Corebiz/static/js/main.2c1a9d0e.js",
+    "static/media/Carrefour.png": "/Corebiz/static/media/Carrefour.815ec141c1726ccd12db.png",
+    "static/media/banner3.jpeg": "/Corebiz/static/media/banner3.d18d8ce0f8f25201a329.jpeg",
+    "index.html": "/Corebiz/index.html",
+    "main.8b8d107a.css.map": "/Corebiz/static/css/main.8b8d107a.css.map",
+    "main.2c1a9d0e.js.map": "/Corebiz/static/js/main.2c1a9d0e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8b8d107a.css",
+    "static/js/main.2c1a9d0e.js"
+  ]
+}
