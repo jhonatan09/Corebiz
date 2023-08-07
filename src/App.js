@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from './componentes/Navbar'
+import { BrowserRouter } from 'react-router-dom';
+import Main from "./componentes/Main"
+import Footer from './componentes/Footer'
+import { DataContextProvider } from './store'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+
+    this.state = {
+      active_language: 'PT',
+    }
+    this.languages = this.languages.bind(this)
+  }
+
+  languages(language) {
+    this.setState({
+      active_language: language
+    })
+  }
+
+
+
+  render() {
+
+    return (
+      <div className="App">
+        <DataContextProvider>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
+            <Navbar language={this.languages} active_language={this.state.active_language} />
+            <Main />
+            <Footer active_language={this.state.active_language} />
+
+          </BrowserRouter>
+        </DataContextProvider>
+      </div>
+    )
+  }
 }
 
 export default App;
