@@ -12,6 +12,10 @@ function DataContextProvider(props) {
 
     const [errpApi, setErroApi] = useState(false)
 
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+
+    const [registered, setRegistered] = useState(false)
 
 
     useEffect(() => {
@@ -47,8 +51,27 @@ function DataContextProvider(props) {
 
     }
 
+    const sendData = (e) => {
+        e.preventDefault();
+        if (name !== '' && email !== '') {
+
+            const requestOptions = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: name, email: email })
+            };
+            fetch('https://fakestoreapi.com/users', requestOptions)
+                .then(response => response.json())
+                .then(data => setRegistered(true));
+        } else if (name === '' && email === '') {
+            alert('campos precisam está preenchidos')
+        }
+    }
+
+
+
     return (
-        <DataContext.Provider value={{ product, setNumClick, numClick, currentTargetToValue }}>
+        <DataContext.Provider value={{ product, setNumClick, numClick, currentTargetToValue, setName, setEmail, sendData, registered, setRegistered }}>
             {props.children}
         </DataContext.Provider>
     )

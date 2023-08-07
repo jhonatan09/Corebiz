@@ -1,13 +1,23 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import BannersJson from '../components/Banners_data';
 import Slider from "react-slick";
 import { bool } from 'prop-types';
 import Products from '../components/Product'
 import Languages from '../components/languages'
-
+import { DataContext } from '../store'
 
 
 const Principal = (props) => {
+    const { registered, setRegistered } = useContext(DataContext)
+
+    useEffect(() => {
+
+        if (registered === true) {
+            alert('usuário cadastrado!')
+            setRegistered(false)
+        }
+
+    }, [registered])
 
     const banners = BannersJson.map((banner, index) => {
         return (
