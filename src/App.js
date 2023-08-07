@@ -1,43 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './componentes/Navbar'
 import { BrowserRouter } from 'react-router-dom';
 import Main from "./componentes/Main"
 import Footer from './componentes/Footer'
 import { DataContextProvider } from './store'
 
-class App extends React.Component {
-  constructor() {
-    super()
+const App = () => {
 
-    this.state = {
-      active_language: 'PT',
-    }
-    this.languages = this.languages.bind(this)
+  const [language, setLanguage] = useState('PT')
+
+  function languages(language) {
+    setLanguage(language)
   }
 
-  languages(language) {
-    this.setState({
-      active_language: language
-    })
-  }
+  return (
+    <div className="App">
+      <DataContextProvider>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <Navbar language={languages} active_language={language} />
+          <Main />
+          <Footer active_language={language} />
 
-
-
-  render() {
-
-    return (
-      <div className="App">
-        <DataContextProvider>
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
-            <Navbar language={this.languages} active_language={this.state.active_language} />
-            <Main />
-            <Footer active_language={this.state.active_language} />
-
-          </BrowserRouter>
-        </DataContextProvider>
-      </div>
-    )
-  }
+        </BrowserRouter>
+      </DataContextProvider>
+    </div>
+  )
 }
 
 export default App;
